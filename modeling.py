@@ -8,8 +8,8 @@ query = cursor.execute("SELECT * FROM samsung;")
 cols = [column[0] for column in query.description]
 df = pd.DataFrame.from_records(data=query.fetchall(),columns=cols)
 
-target = 'price'
-features = df.drop(['date','price'],axis=1)
+target = 'Price'
+features = df.drop(['Date','Price'],axis=1)
 
 df_target = df[target]
 
