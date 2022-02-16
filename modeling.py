@@ -9,7 +9,7 @@ cols = [column[0] for column in query.description]
 df = pd.DataFrame.from_records(data=query.fetchall(),columns=cols)
 
 target = 'Price'
-features = df.drop(['Date','Price'],axis=1)
+features = df.drop(['Date''Price'],axis=1)
 
 df_target = df[target]
 
@@ -36,5 +36,5 @@ y_preds = pipe_linear.predict(X_test)
 
 import pickle
 
-with open('model.pkl','wb') as pickle_file:
+with open('./flask_app/model/model.pkl','wb') as pickle_file:
     pickle.dump(pipe_linear,pickle_file)
